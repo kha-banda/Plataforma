@@ -4,70 +4,69 @@
     <meta charset="UTF-8">
     <title>Atención a Clientes</title>
     <style>
-        /* Estilos básicos para el cuerpo y el contenedor */
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: #f4f4f4; /* Color de fondo suave para toda la página */
-            position: relative; /* Necesario para la posición absoluta de la imagen */
+            background: #f4f4f4;
+            position: relative;
         }
 
         h1 {
             text-align: center;
             color: #333;
             margin: 20px 0;
-            font-family: 'Arial Black', Arial, sans-serif; /* Fuente llamativa */
-            font-size: 2em; /* Tamaño reducido para el título */
-            background: #e0e0e0; /* Fondo claro con menor saturación */
-            padding: 15px; /* Espaciado alrededor del texto */
-            border-radius: 10px; /* Bordes redondeados */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Sombra de texto más sutil */
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-size: 2em;
+            background: #e0e0e0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
         }
 
         .marca-agua {
             position: absolute;
-            top: 20px; /* Ajusta la distancia desde el fondo para alinear la imagen con el título */
-            right: 20px; /* Ajusta la distancia desde el borde derecho */
-            width: 200px; /* Tamaño ajustado para la imagen */
-            height: auto; /* Mantiene la relación de aspecto */
-            opacity: 0.3; /* Ajusta la opacidad según lo necesites */
-            pointer-events: none; /* Asegura que no interfiera con otros elementos interactivos */
-            z-index: 10; /* Asegura que esté encima del contenido, si es necesario */
-            border-radius: 15px; /* Redondea las esquinas para un diseño más suave */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil para darle un efecto de profundidad */
+            top: 20px;
+            right: 20px;
+            width: 200px;
+            height: auto;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 10;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .container {
-            display: flex; /* Usa flexbox para alinear los elementos */
+            display: flex;
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            gap: 20px; /* Espaciado entre los elementos */
-            margin-top: 100px; /* Ajusta el margen superior para no interferir con el título */
+            gap: 20px;
+            margin-top: 100px;
         }
 
         .sidebar {
-            width: 250px; /* Ancho fijo para la barra lateral */
+            width: 250px;
             display: flex;
             flex-direction: column;
-            gap: 20px; /* Espaciado entre los elementos */
+            gap: 20px;
         }
 
         .sidebar-section {
-            background: #ffffff; /* Fondo blanco para un contraste claro */
-            border-radius: 8px; /* Bordes redondeados */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-            padding: 15px; /* Espaciado interno */
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
             text-align: center;
-            transition: background 0.3s ease, transform 0.3s ease; /* Transiciones suaves para efectos */
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
         .sidebar-section:hover {
-            background: #e0e0e0; /* Fondo gris claro al pasar el ratón */
-            transform: scale(1.02); /* Efecto de aumento sutil */
+            background: #e0e0e0;
+            transform: scale(1.02);
         }
 
         .sidebar-section h2 {
@@ -77,13 +76,13 @@
         }
 
         .sidebar-section p {
-            font-size: 0.9em; /* Tamaño de fuente reducido para mayor legibilidad */
+            font-size: 0.9em;
             color: #666;
         }
 
         .sidebar-section a.button {
             display: inline-block;
-            background: #007bff; /* Color primario del botón */
+            background: #007bff;
             color: #fff;
             text-decoration: none;
             padding: 10px 20px;
@@ -95,7 +94,7 @@
         }
 
         .sidebar-section a.button:hover {
-            background: #0056b3; /* Color más oscuro al pasar el ratón */
+            background: #0056b3;
         }
     </style>
 </head>
@@ -131,7 +130,6 @@
             </div>
             <div class="sidebar-section">
                 <h2>Formulario de Contacto</h2>
-                <!-- Cambiado a un enlace con estilo de botón -->
                 <a href="FormulariodeCliente.html" class="button">FormulariodeCliente</a>
             </div>
         </div>
