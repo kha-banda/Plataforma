@@ -1,0 +1,47 @@
+[Logo del Almac�n]
+
+Bienvenido a [Nombre del Almac�n]
+
+
+Menu Principal:
+
+Inicio
+Productos
+
+Servicios
+
+Horarios para pagar 
+Ubicaci�n
+Contacto
+
+Preguntas Frecuentes
+Im�genes destacadas de productos
+
+Anuncios sobre ofertas o noticias
+
+Procedimiento de Pago.
+
+5. Secci�n de Contacto: (Posible opcion)
+
+
+Formulario de Contacto
+
+Tel�fono, 
+Correo Electr�nico
+
+6. Secci�n de Preguntas Frecuentes:
+
+C�mo realizar un pedido
+
+Horarios de atenci�n
+
+Proceso de pago
+
+7. Pie de P�gina:
+
+
+Informaci�n Legal
+
+Redes Sociales
+
+Informaci�n de Contacto Adicional

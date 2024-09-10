@@ -1,0 +1,127 @@
+<!-- Contenedor principal para los botones -->
+<div class="button-container">
+    <!-- Botón que enlaza a la Sección 1 -->
+    <a href="#section1" class="button">Sección 1</a>
+    <!-- Botón que enlaza a la Sección 2 -->
+    <a href="#section2" class="button">Sección 2</a>
+    <!-- Botón que enlaza a la Sección 3 -->
+    <a href="#section3" class="button">Sección 3</a>
+    <!-- Botón que enlaza a la Sección 4 -->
+    <a href="#section4" class="button">Sección 4</a>
+</div>
+
+<!-- Sección 1 de la página -->
+<section id="section1">
+    <!-- Título de la Sección 1 -->
+    <h2>Contenido de la Sección 1</h2>
+    <!-- Párrafo con el contenido de la Sección 1 -->
+    <p>Esta es la sección 1 de la plataforma.</p>
+</section>
+
+<!-- Sección 2 de la página -->
+<section id="section2">
+    <!-- Título de la Sección 2 -->
+    <h2>Contenido de la Sección 2</h2>
+    <!-- Párrafo con el contenido de la Sección 2 -->
+    <p>Esta es la sección 2 de la plataforma.</p>
+</section>
+
+<!-- Sección 3 de la página -->
+<section id="section3">
+    <!-- Título de la Sección 3 -->
+    <h2>Contenido de la Sección 3</h2>
+    <!-- Párrafo con el contenido de la Sección 3 -->
+    <p>Esta es la sección 3 de la plataforma.</p>
+</section>
+
+<!-- Sección 4 de la página -->
+<section id="section4">
+    <!-- Título de la Sección 4 -->
+    <h2>Contenido de la Sección 4</h2>
+    <!-- Párrafo con el contenido de la Sección 4 -->
+    <p>Esta es la sección 4 de la plataforma.</p>
+</section>
+Explicación de los Comentarios:
+<!-- Contenedor principal para los botones -->: Indica que el siguiente div contiene todos los botones que enlazan a las diferentes secciones de la página.
+
+<!-- Botón que enlaza a la Sección X -->: Cada botón <a> dentro del contenedor enlaza a una sección específica de la página. El href="#sectionX" 
+indica el ID de la sección a la que enlaza el botón.
+
+<!-- Sección X de la página -->: Define el inicio de una nueva sección en la página. El id="sectionX" permite que esta sección sea enlazada desde los botones.
+
+<!-- Título de la Sección X -->: Indica el título de la sección, que es mostrado en la página.
+
+<!-- Párrafo con el contenido de la Sección X -->: Describe el contenido textual que está dentro de esa sección en particular.
+
+
+
+
+
+EJEMPLO:
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="button-container">
+        <a href="#section1" class="button">Sección 1</a>
+        <a href="#section2" class="button">Sección 2</a>
+        <a href="#section3" class="button">Sección 3</a>
+        <a href="#section4" class="button">Sección 4</a>
+    </div>
+
+    <section id="section1">
+        <h2>Contenido de la Sección 1</h2>
+        <p>Esta es la sección 1 de la plataforma.</p>
+    </section>
+
+    <section id="section2">
+        <h2>Contenido de la Sección 2</h2>
+        <p>Esta es la sección 2 de la plataforma.</p>
+    </section>
+
+    <section id="section3">
+        <h2>Contenido de la Sección 3</h2>
+        <p>Esta es la sección 3 de la plataforma.</p>
+    </section>
+
+    <section id="section4">
+        <h2>Contenido de la Sección 4</h2>
+        <p>Esta es la sección 4 de la plataforma.</p>
+    </section>
+</body>
+</html>
+
+
+Explicación:
+1.Contenedor de Botones (.button-container):
+oUsa display: flex para alinear los botones en una fila horizontal.
+ojustify-content: space-around distribuye los botones uniformemente con espacio entre ellos.
+2.Botones (.button):
+oUsa la etiqueta <a> para que los botones actúen como enlaces a diferentes secciones de la página.
+oSe aplican estilos de botón como padding, font-size, background-color, border-radius, y un efecto hover que cambia el color de fondo.
+3.Secciones (section):
+oCada sección tiene un fondo blanco, márgenes y padding para separarlas visualmente del resto del contenido.
+oSe usa box-shadow para darle un efecto de elevación.
+Enlaces Internos:
+•Los botones <a href="#section1">Sección 1</a> permiten que el usuario navegue a diferentes secciones de la misma página usando los identificadores id en cada <section>.
+Uso:
+•Copia el código HTML en tu archivo principal (por ejemplo, index.html) y el CSS en tu archivo de estilos (por ejemplo, styles.css).
+•Personaliza los estilos según tus necesidades.
+
+Color	Hex	RGB	HSL
+Negro	#000000	rgb(0, 0, 0)	hsl(0, 0%, 0%)
+Blanco	#FFFFFF	rgb(255, 255, 255)	hsl(0, 0%, 100%)
+Rojo	#FF0000	rgb(255, 0, 0)	hsl(0, 100%, 50%)
+Verde	#00FF00	rgb(0, 255, 0)	hsl(120, 100%, 50%)
+Azul	#0000FF	rgb(0, 0, 255)	hsl(240, 100%, 50%)
+Amarillo	#FFFF00	rgb(255, 255, 0)	hsl(60, 100%, 50%)
+Cyan	#00FFFF	rgb(0, 255, 255)	hsl(180, 100%, 50%)
+Magenta	#FF00FF	rgb(255, 0, 255)	hsl(300, 100%, 50%)
+Gris	#808080	rgb(128, 128, 128)	hsl(0, 0%, 50%)
+
+

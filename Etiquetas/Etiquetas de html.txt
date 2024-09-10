@@ -1,0 +1,74 @@
+•<!DOCTYPE html>: Declara el tipo de documento y la versión de HTML que se está usando.
+•<html>: Elemento raíz que envuelve todo el contenido de la página.
+•<head>: Contiene metadatos sobre el documento, como el título y los enlaces a estilos y scripts.
+•<title>: Define el título de la página que aparece en la barra de título del navegador.
+•<meta>: Proporciona metadatos sobre el documento, como la codificación de caracteres y la descripción.
+•<link>: Enlaza el documento HTML con archivos externos, como hojas de estilo CSS.
+•<style>: Contiene estilos CSS internos para el documento.
+•<script>: Contiene o enlaza código JavaScript.
+•<body>: Contiene el contenido visible de la página web.
+•<h1> a <h6>: Encabezados de diferentes niveles, donde <h1> es el más importante y <h6> el menos.
+•<p>: Define un párrafo de texto.
+•<a>: Crea un enlace a otra página o recurso. Usa el atributo href para definir la URL.
+
+•<img>: Inserta una imagen en la página. Usa el atributo src para definir la URL de la imagen y alt para el texto alternativo.
+-
+-Estructura Basica: 
+<img src="ruta/de/la/imagen.jpg" alt="Descripción de la imagen" width="300" height="200">
+Para poder darle estilo en un archivo CSS o dentro de una etiqueta <style> en el HTML:
+img {
+    width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border: 2px solid black; /* Agrega un borde */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.3); /* Sombra de la imagen */
+}
+-
+CSS para Estilo Adicional
+.mi-imagen {
+    display: block; /* Bloque para alineación */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    max-width: 100%; /* No excede el ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+    border: 5px solid #ccc; /* Borde de color gris claro */
+}
+
+.mi-imagen {
+    display: block; /* Bloque para alineación */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    max-width: 100%; /* No excede el ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+    border: 5px solid #ccc; /* Borde de color gris claro */
+}
+
+Ejemplo de html completo:
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de Imagen</title>
+    <style>
+        .mi-imagen {
+            width: 50%; /* Ajusta al 50% del contenedor */
+            height: auto; /* Mantiene la proporción */
+            border: 5px solid #ccc; /* Borde de color gris claro */
+            border-radius: 15px; /* Bordes redondeados */
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.5); /* Sombra */
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Imagen</h1>
+    <img src="imagenes/mi-imagen.jpg" alt="Descripción de la imagen" class="mi-imagen">
+</body>
+</html>
+
+
+•<ul> y <ol>: Crea listas desordenadas (con viñetas) y ordenadas (numeradas), respectivamente. Cada elemento de lista se define con <li>.
+•<table>: Define una tabla. Usa <tr> para las filas, <td> para las celdas y <th> para los encabezados de columna.
+•<form>: Define un formulario para la entrada de datos del usuario. Incluye elementos como <input>, <textarea>, <button>, entre otros.
+•<div>: Crea un contenedor genérico para agrupar otros elementos y aplicar estilos.
+•<span>: Crea un contenedor en línea para agrupar y aplicar estilos a partes del contenido.
+•<br>: Inserta un salto de línea.
+•<hr>: Inserta una línea horizontal, a menudo utilizada para separar secciones.
+

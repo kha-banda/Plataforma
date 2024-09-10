@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Atención a Clientes</title>
+    <style>
+        /* Estilos básicos para el cuerpo y el contenedor */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4; /* Color de fondo suave para toda la página */
+            position: relative; /* Necesario para la posición absoluta de la imagen */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 20px 0;
+            font-family: 'Arial Black', Arial, sans-serif; /* Fuente llamativa */
+            font-size: 2em; /* Tamaño reducido para el título */
+            background: #e0e0e0; /* Fondo claro con menor saturación */
+            padding: 15px; /* Espaciado alrededor del texto */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Sombra de texto más sutil */
+        }
+
+        .marca-agua {
+            position: absolute;
+            top: 20px; /* Ajusta la distancia desde el fondo para alinear la imagen con el título */
+            right: 20px; /* Ajusta la distancia desde el borde derecho */
+            width: 200px; /* Tamaño ajustado para la imagen */
+            height: auto; /* Mantiene la relación de aspecto */
+            opacity: 0.3; /* Ajusta la opacidad según lo necesites */
+            pointer-events: none; /* Asegura que no interfiera con otros elementos interactivos */
+            z-index: 10; /* Asegura que esté encima del contenido, si es necesario */
+            border-radius: 15px; /* Redondea las esquinas para un diseño más suave */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil para darle un efecto de profundidad */
+        }
+
+        .container {
+            display: flex; /* Usa flexbox para alinear los elementos */
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            gap: 20px; /* Espaciado entre los elementos */
+            margin-top: 100px; /* Ajusta el margen superior para no interferir con el título */
+        }
+
+        .sidebar {
+            width: 250px; /* Ancho fijo para la barra lateral */
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Espaciado entre los elementos */
+        }
+
+        .sidebar-section {
+            background: #ffffff; /* Fondo blanco para un contraste claro */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            padding: 15px; /* Espaciado interno */
+            text-align: center;
+            transition: background 0.3s ease, transform 0.3s ease; /* Transiciones suaves para efectos */
+        }
+
+        .sidebar-section:hover {
+            background: #e0e0e0; /* Fondo gris claro al pasar el ratón */
+            transform: scale(1.02); /* Efecto de aumento sutil */
+        }
+
+        .sidebar-section h2 {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-section p {
+            font-size: 0.9em; /* Tamaño de fuente reducido para mayor legibilidad */
+            color: #666;
+        }
+
+        .sidebar-section a.button {
+            display: inline-block;
+            background: #007bff; /* Color primario del botón */
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .sidebar-section a.button:hover {
+            background: #0056b3; /* Color más oscuro al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <h1>PLATAFORMA DE ATENCIÓN A CLIENTES</h1>
+    <img src="imagenes/logo3.png" alt="No se puede cargar la imagen" class="marca-agua">
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <h2>Productos de Diconsa</h2>
+                <a href="productos.html" class="button">Ir a Productos</a>
+            </div>
+            <div class="sidebar-section">
+                <h2>Horarios para pagar</h2>
+                <button>Ir a Sección 2</button>
+            </div>
+            <div class="sidebar-section">
+                <h2>Sección de Contacto</h2>
+                <button>Ir a Sección 3</button>
+            </div>
+            <div class="sidebar-section">
+                <h2>Redes sociales</h2>
+                <button>Ir</button>
+            </div>
+            <div class="sidebar-section">
+                <h2>Información legal</h2>
+                <button>Ir</button>
+            </div>
+            <div class="sidebar-section">
+                <h2>Información de Contacto</h2>
+                <button>Ir</button>
+            </div>
+            <div class="sidebar-section">
+                <h2>Formulario de Contacto</h2>
+                <!-- Cambiado a un enlace con estilo de botón -->
+                <a href="FormulariodeCliente.html" class="button">FormulariodeCliente</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
