@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Cliente</title>
+    <title>Registro de Encargado de Tienda Comunitaria</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Ajustar para que el formulario esté visible desde el inicio */
             height: 100vh;
-            margin: 0;
         }
         .form-container {
             background-color: #fff;
@@ -21,6 +22,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 500px;
+            margin-top: 20px; /* Añadir un poco de margen arriba */
         }
         .form-container h2 {
             margin-bottom: 20px;
@@ -41,10 +43,6 @@
             border: 1px solid #ddd;
             border-radius: 4px;
         }
-        .form-container input.invalid,
-        .form-container select.invalid {
-            border-color: red;
-        }
         .form-container button {
             background-color: #007bff;
             color: #fff;
@@ -53,6 +51,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            width: 100%;
         }
         .form-container button:hover {
             background-color: #0056b3;
@@ -64,26 +63,18 @@
     </style>
 </head>
 <body>
+    
     <div class="form-container">
-        <h2>Registro de Cliente</h2>
+        <h2>Registro de Encargado de Tienda Comunitaria</h2>
         <div id="error-message" class="error-message"></div>
-        <form id="registrationForm">
+        <!-- Agregado el atributo action y method aquí -->
+        <form id="registrationForm" action="registro.php" method="POST">
             <!-- Información Personal -->
-            <label for="fullName">Nombre Completo:</label>
+            <label for="fullName">Nombre Completo del Encargado:</label>
             <input type="text" id="fullName" name="fullName" required>
 
             <label for="birthDate">Fecha de Nacimiento:</label>
             <input type="date" id="birthDate" name="birthDate" required>
-
-            <label>Género:</label>
-            <input type="radio" id="male" name="gender" value="Male">
-            <label for="male">Masculino</label>
-            <input type="radio" id="female" name="gender" value="Female">
-            <label for="female">Femenino</label>
-            <input type="radio" id="other" name="gender" value="Other">
-            <label for="other">Otro</label>
-            <input type="radio" id="preferNotToSay" name="gender" value="Prefer Not to Say">
-            <label for="preferNotToSay">Prefiero no decir</label>
 
             <label for="phoneNumber">Número de Teléfono:</label>
             <input type="text" id="phoneNumber" name="phoneNumber" required>
@@ -91,12 +82,21 @@
             <label for="email">Correo Electrónico:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="address">Dirección:</label>
-            <input type="text" id="address" name="address" placeholder="Calle" required>
-            <input type="text" id="city" name="city" placeholder="Ciudad" required>
-            <input type="text" id="state" name="state" placeholder="Estado/Provincia" required>
-            <input type="text" id="postalCode" name="postalCode" placeholder="Código Postal" required>
-            <input type="text" id="country" name="country" placeholder="País" required>
+            <!-- Información de la Tienda Comunitaria -->
+            <label for="storeName">Numero de la Tienda Comunitaria:</label>
+            <input type="text" id="storeAddress" name="storeAddress" placeholder="Nombre y/o numero de la tienda" required>
+
+            <label for="storeAddress">Dirección de la Tienda:</label>
+            <input type="text" id="storeAddress" name="storeAddress" placeholder="Calle y Número" required>
+            <input type="text" id="storeCity" name="storeCity" placeholder="Comunidad" required>
+
+            <label for="storeType">Tipo de Productos que Solicita:</label>
+            <select id="storeType" name="storeType" required>
+                <option value="Comestibles">Comestibles</option>
+                <option value="Limpieza">Productos de Limpieza</option>
+                <option value="Abarrotes">Abarrotes Generales</option>
+                <option value="Otro">Otro</option>
+            </select>
 
             <!-- Información de Cuenta -->
             <label for="username">Nombre de Usuario:</label>
@@ -116,26 +116,11 @@
             <label for="phoneContact">Teléfono</label>
             <input type="checkbox" id="textContact" name="contactMethod" value="Text">
             <label for="textContact">Mensaje de Texto</label>
-            <input type="checkbox" id="otherContact" name="contactMethod" value="Other">
-            <label for="otherContact">Otro</label>
-
-            <label for="assistanceType">¿Qué tipo de asistencia te interesa?</label>
-            <select id="assistanceType" name="assistanceType" multiple>
-                <option value="Technical Support">Soporte Técnico</option>
-                <option value="General Inquiries">Consultas Generales</option>
-                <option value="Product Assistance">Asistencia con Productos</option>
-                <option value="Other">Otros</option>
-            </select>
 
             <!-- Consentimiento y Términos -->
             <label>
                 <input type="checkbox" id="terms" name="terms" required>
                 Acepto los términos y condiciones y la política de privacidad
-            </label>
-
-            <label>
-                <input type="checkbox" id="newsletter" name="newsletter">
-                Deseo recibir actualizaciones y ofertas especiales
             </label>
 
             <button type="submit">Enviar</button>
@@ -175,9 +160,15 @@
 
             // Show error message and prevent form submission if invalid
             if (!isValid) {
-                errorMessage += 'Error por favor, asegúrese de haber completado todos los campos.';
+                errorMessage += 'Error, por favor, asegúrese de haber completado todos los campos.';
                 errorDiv.innerHTML = errorMessage;
                 event.preventDefault(); // Prevent form submission
+            } else {
+                // Simulación de envío de formulario
+                alert('Formulario enviado exitosamente!');
+                event.preventDefault(); // Elimina esto si tienes un backend real para manejar la petición
+                // Aquí podrías redirigir a otra página o hacer una solicitud POST al backend
+                
             }
         });
     </script>
