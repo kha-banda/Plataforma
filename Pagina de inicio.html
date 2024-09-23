@@ -25,16 +25,17 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
         }
 
+        /* Ajustes a la imagen de la marca de agua */
         .marca-agua {
             position: absolute;
             top: 20px;
             right: 20px;
-            width: 200px;
+            width: 250px; /* Aumentamos el tamaño */
             height: auto;
-            opacity: 0.3;
+            opacity: 0.6; /* Menos transparencia para que sea visible pero sin interferir */
             pointer-events: none;
             z-index: 10;
-            border-radius: 15px;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -75,11 +76,6 @@
             margin-bottom: 10px;
         }
 
-        .sidebar-section p {
-            font-size: 0.9em;
-            color: #666;
-        }
-
         .sidebar-section a.button {
             display: inline-block;
             background: #007bff;
@@ -96,6 +92,25 @@
         .sidebar-section a.button:hover {
             background: #0056b3;
         }
+
+        /* Enlace final */
+        .final-link {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        .final-link a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .final-link a:hover {
+            color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -111,32 +126,35 @@
             <div class="sidebar-section">
                 <h2>Horarios para pagar</h2>
                 <a href="horarios.html" class="button">entrar</a>
-              
             </div>
-    
             <div class="sidebar-section">
                 <h2>Redes sociales</h2>
                 <a href="redessociales.html" class="button">ir</a>
-               
             </div>
             <div class="sidebar-section">
                 <h2>Información legal</h2>
                 <a href="informacionlegal.html" class="button">ir</a>
             </div>
             <div class="sidebar-section">
-                <h2>Información de Contacto</h2>
+                <h2>Información de Contacto del Almacen</h2>
                 <a href="seccion_de_contacto.html" class="button">entrar</a>
-                
             </div>
             <div class="sidebar-section">
                 <h2>Formulario de Contacto</h2>
                 <a href="FormulariodeCliente.html" class="button">Registrate</a>
             </div>
             <div class="sidebar-section">
-                <h2>Inicia sesion</h2>
-                <a href="Inicio de sesion.html" class="button">entrar</a>
+                <h2>Inicia sesión</h2>
+                <a href="Iniciasesion.html" class="button">entrar</a>
             </div>
         </div>
     </div>
+
+    <!-- Enlace final para redirigir a un sitio web externo -->
+    <div class="final-link">
+        <p>Para mas informacion visita</p>
+        <a href="https://www.gob.mx/diconsa" target="_blank">https://www.gob.mx/diconsa</a>
+    </div>
+
 </body>
 </html>
