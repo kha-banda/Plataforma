@@ -2,82 +2,106 @@ from db_connection import create_connection, close_connection
 
 def create_tables(connection):
     cursor = connection.cursor()
-    
+
+    # Crear tabla Categoria
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS categoria (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      nombre VARCHAR(50) NOT NULL
+      ID_Categoria INT AUTO_INCREMENT PRIMARY KEY,
+      Nombre VARCHAR(50) NOT NULL
     );
     """)
-    
+
+    # Crear tabla Direccion
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS direccion (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      estado VARCHAR(50) NOT NULL,
-      ciudad VARCHAR(50) NOT NULL,
-      colonia VARCHAR(50) NOT NULL,
-      cp VARCHAR(10) NOT NULL,
-      calle VARCHAR(50) NOT NULL,
-      numero INT NOT NULL
+      ID_Direccion INT AUTO_INCREMENT PRIMARY KEY,
+      Calle VARCHAR(50) NOT NULL,
+      Numero VARCHAR(50) NOT NULL,
+      Colonia VARCHAR(50) NOT NULL,
+      Localidad VARCHAR(50) NOT NULL,
+      CP VARCHAR(10) NOT NULL
     );
     """)
 
+    # Crear tabla Usuario (Encargado)
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS usuario (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      nombre VARCHAR(50) NOT NULL,
-      apellidos VARCHAR(100) NOT NULL,
-      correo VARCHAR(100) NOT NULL UNIQUE,
-      telefono VARCHAR(15) NOT NULL,
-      contraseña VARCHAR(255) NOT NULL,
-      direccion_id INT NOT NULL,
-      FOREIGN KEY (direccion_id) REFERENCES direccion(id) ON DELETE CASCADE
+      ID_Usuario INT AUTO_INCREMENT PRIMARY KEY,
+      Nombre VARCHAR(50) NOT NULL,
+      Correo VARCHAR(100) NOT NULL UNIQUE,
+      Contraseña VARCHAR(255) NOT NULL,
+      ID_Direccion INT NOT NULL,
+      FOREIGN KEY (ID_Direccion) REFERENCES direccion(ID_Direccion) ON DELETE CASCADE
     );
     """)
 
+    # Crear tabla Tienda
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS tienda (
+      ID_Tienda INT AUTO_INCREMENT PRIMARY KEY,
+      Nombre VARCHAR(255) NOT NULL,
+      Direccion VARCHAR(255) NOT NULL,
+      Telefono VARCHAR(20) NOT NULL
+    );
+    """)
+
+    # Crear tabla Producto
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS producto (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      nombre VARCHAR(100) NOT NULL,
-      descripcion TEXT NOT NULL,
-      cantidad INT NOT NULL,
-      precio DECIMAL(10, 2) NOT NULL,
-      imagen VARCHAR(255) NOT NULL,
-      categoria_id INT NOT NULL,
-      FOREIGN KEY (categoria_id) REFERENCES categoria(id)
+      ID_Producto INT AUTO_INCREMENT PRIMARY KEY,
+      Descripcion VARCHAR(255) NOT NULL,
+      Precio DECIMAL(10, 2) NOT NULL,
+      Cantidad INT NOT NULL,
+      ID_Categoria INT NOT NULL,
+      ID_Tienda INT NOT NULL,
+      FOREIGN KEY (ID_Categoria) REFERENCES categoria(ID_Categoria),
+      FOREIGN KEY (ID_Tienda) REFERENCES tienda(ID_Tienda)
     );
     """)
 
+    # Crear tabla Pedido
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS pedido (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      usuario_id INT NOT NULL,
-      fecha DATE NOT NULL,
-      status VARCHAR(50) NOT NULL,
-      FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE
+      ID_Pedido INT AUTO_INCREMENT PRIMARY KEY,
+      Fecha DATE NOT NULL,
+      Estado VARCHAR(50) NOT NULL,
+      Tipo VARCHAR(50) NOT NULL,
+      ID_Usuario INT NOT NULL,
+      FOREIGN KEY (ID_Usuario) REFERENCES usuario(ID_Usuario) ON DELETE CASCADE
     );
     """)
 
+    # Crear tabla Pedido_Producto (relación N:M entre Pedido y Producto)
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS pedido_producto (
-      pedido_id INT NOT NULL,
-      producto_id INT NOT NULL,
-      cantidad INT NOT NULL,
-      PRIMARY KEY (pedido_id, producto_id),
-      FOREIGN KEY (pedido_id) REFERENCES pedido(id) ON DELETE CASCADE,
-      FOREIGN KEY (producto_id) REFERENCES producto(id) ON DELETE CASCADE
+      ID_Pedido INT NOT NULL,
+      ID_Producto INT NOT NULL,
+      Cantidad INT NOT NULL,
+      PRIMARY KEY (ID_Pedido, ID_Producto),
+      FOREIGN KEY (ID_Pedido) REFERENCES pedido(ID_Pedido) ON DELETE CASCADE,
+      FOREIGN KEY (ID_Producto) REFERENCES producto(ID_Producto) ON DELETE CASCADE
     );
     """)
 
+    # Crear tabla Almacen
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS reclamo (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      usuario_id INT NOT NULL,
-      producto_id INT NOT NULL,
-      fecha DATE NOT NULL,
-      descripcion TEXT NOT NULL,
-      FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE,
-      FOREIGN KEY (producto_id) REFERENCES producto(id) ON DELETE CASCADE
+    CREATE TABLE IF NOT EXISTS almacen (
+      ID_Almacen INT AUTO_INCREMENT PRIMARY KEY,
+      Reporte TEXT NOT NULL
+    );
+    """)
+
+    # Crear tabla Entrada_Salida (relacionada con Producto y Almacen)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS entrada_salida (
+      ID_EntradaSalida INT AUTO_INCREMENT PRIMARY KEY,
+      Tipo ENUM('entrada', 'salida') NOT NULL,
+      Fecha DATE NOT NULL,
+      Cantidad INT NOT NULL,
+      ID_Producto INT NOT NULL,
+      ID_Almacen INT NOT NULL,
+      FOREIGN KEY (ID_Producto) REFERENCES producto(ID_Producto) ON DELETE CASCADE,
+      FOREIGN KEY (ID_Almacen) REFERENCES almacen(ID_Almacen) ON DELETE CASCADE
     );
     """)
 
