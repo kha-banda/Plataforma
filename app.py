@@ -45,3 +45,18 @@ def logout():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
+#/PLATAFORMA
+#│
+#├── templates/                # Carpeta que contiene los archivos HTML
+#│   ├── iniciar_sesion.html    # Página de inicio de sesión
+#│   ├── interfazusuario.html   # Página de quejas, opiniones o sugerencias
+#│   ├── productos.html         # Página de productos
+#│   ├── pagina_de_inicio.html  # Página de inicio que acabamos de modificar
+#│   └── ...otros archivos HTML
+#│
+#├── static/                   # Carpeta para recursos estáticos (CSS, imágenes, JS)
+#│
+#├── app.py                    # Archivo principal de Flask
+#├── db_connection.py          # Archivo de conexión con la base de datos
+#└── insert_data.py            # Archivo opcional para insertar datos iniciales
