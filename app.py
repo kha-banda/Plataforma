@@ -42,6 +42,13 @@ def panel_control():
 def logout():
     session.pop("usuario", None)
     return redirect(url_for("login"))
+@app.route('/productos')
+def productos():
+    return render_template('productos.html')
+
+@app.route('/quejas')
+def quejas():
+    return render_template('quejas.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
