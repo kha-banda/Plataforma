@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 15-10-2024 a las 21:08:13
+-- Tiempo de generación: 28-10-2024 a las 19:29:02
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -49,15 +49,21 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   `ID_Categoria` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_Categoria`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Volcado de datos para la tabla `categoria`
 --
 
 INSERT INTO `categoria` (`ID_Categoria`, `Nombre`) VALUES
-(2, 'bebidas'),
-(3, 'blanqueador');
+(1, 'Granos y cereales'),
+(2, 'Conservas y enlatados'),
+(3, 'Lacteos'),
+(4, 'Bebidas'),
+(5, 'Higiene Personal'),
+(6, 'Detergentes'),
+(7, 'Desinfectantes'),
+(8, 'Insecticidas');
 
 -- --------------------------------------------------------
 
@@ -103,14 +109,6 @@ CREATE TABLE IF NOT EXISTS `entrada_salida` (
   KEY `ID_Almacen` (`ID_Almacen`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
---
--- Volcado de datos para la tabla `entrada_salida`
---
-
-INSERT INTO `entrada_salida` (`ID_EntradaSalida`, `Tipo`, `Fecha`, `Cantidad`, `ID_Producto`, `ID_Almacen`) VALUES
-(1, 'salida', '2024-10-16', 3, 6, 1),
-(3, 'entrada', '2024-10-01', 9, 6, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -149,14 +147,6 @@ CREATE TABLE IF NOT EXISTS `pedido_producto` (
   KEY `ID_Producto` (`ID_Producto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `pedido_producto`
---
-
-INSERT INTO `pedido_producto` (`ID_Pedido`, `ID_Producto`, `Cantidad`) VALUES
-(3, 2, 6),
-(4, 6, 6);
-
 -- --------------------------------------------------------
 
 --
@@ -174,14 +164,6 @@ CREATE TABLE IF NOT EXISTS `producto` (
   KEY `ID_Categoria` (`ID_Categoria`),
   KEY `ID_Tienda` (`ID_Tienda`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
-
---
--- Volcado de datos para la tabla `producto`
---
-
-INSERT INTO `producto` (`ID_Producto`, `Descripcion`, `Precio`, `Cantidad`, `ID_Categoria`, `ID_Tienda`) VALUES
-(2, 'sardina enlatada de 400gr', '13.50', 1, 2, 3),
-(6, 'refresco con cafeina de 200ml', '15.00', 1, 3, 2);
 
 -- --------------------------------------------------------
 
