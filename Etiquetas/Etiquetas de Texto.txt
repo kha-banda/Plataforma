@@ -1,0 +1,110 @@
+Encabezados
+
+
+<h1>Título Principal</h1>
+<h2>Subtítulo</h2>
+<h3>Subtítulo Secundario</h3>
+<!-- ... hasta <h6> -->
+-----------------------------------------
+Párrafos
+<p>Este es un párrafo de texto.</p>
+-----------------------------------------
+Negrita y Cursiva
+
+
+<strong>Texto en negrita</strong>
+<em>Texto en cursiva</em>
+((<strong>: Define texto importante en negrita.
+<em>: Define texto enfatizado en cursiva.))
+----------------------------------------
+
+    Listas ___
+               ((Listas Ordenadas (<ol>): Lista numerada.))
+               <ol>
+               <li>Primer ítem</li>
+               <li>Segundo ítem</li>
+               <!-- ... -->
+               </ol>
+               ------------------------------------------------------------------------------------------
+               Listas Desordenadas (<ul>): Lista con viñetas
+               <ul>
+               <li>Primer ítem</li>
+               <li>Segundo ítem</li>
+               <!-- ... -->
+               </ul>
+               ------------------------------------------------------------------------------------------ ---
+               <li>: Define un ítem dentro de una lista.
+               <ul>
+               <li>Ítem 1</li>
+               <li>Ítem 2</li>
+               </ul>
+-------------------------------------------------------------------------------------------
+Enlaces
+<a href="https://www.ejemplo.com">Texto del enlace</a>
+---------------------------------------------------------------------------------------------------------------------
+División y Espaciado
+<br>: Inserta un salto de línea.
+
+<hr>: Inserta una línea horizontal.
+
+<p>Texto antes del salto de línea<br>Texto después del salto de línea.</p>
+<hr>
+<p>Texto después de la línea horizontal.</p>
+-------------------------------------------------------------------------------------------------------------------
+
+                                                 Ejemplo Completo
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Texto</title>
+</head>
+<body>
+    <h1>Título Principal</h1>
+    <p>Este es un párrafo de texto con <strong>negrita</strong> y <em>cursiva</em>.</p>
+    
+    <h2>Lista Ordenada</h2>
+    <ol>
+        <li>Primer ítem</li>
+        <li>Segundo ítem</li>
+    </ol>
+    
+    <h2>Lista Desordenada</h2>
+    <ul>
+        <li>Ítem A</li>
+        <li>Ítem B</li>
+    </ul>
+    
+    <h2>Enlace</h2>
+    <p>Visita <a href="https://www.ejemplo.com">Ejemplo</a> para más información.</p>
+    
+    <h2>Citas</h2>
+    <blockquote>
+        <p>Esto es una cita de bloque.</p>
+    </blockquote>
+    <p>Esto es una <q>cita en línea</q>.</p>
+    
+    <h2>Código</h2>
+    <p>Ejemplo de código: <code>console.log('Hola Mundo');</code></p>
+    <pre>
+    Código preformateado
+    con espacios y saltos
+    de línea.
+    </pre>
+    
+    <h2>Abreviaturas y Acrónimos</h2>
+    <p>La <abbr title="Hypertext Markup Language">HTML</abbr> es un lenguaje de marcado.</p>
+    
+    <h2>Subíndice y Superíndice</h2>
+    <p>H<sub>2</sub>O</p>
+    <p>E = mc<sup>2</sup></p>
+    
+    <h2>División y Espaciado</h2>
+    <p>Texto antes del salto de línea<br>Texto después del salto de línea.</p>
+    <hr>
+    <p>Texto después de la línea horizontal.</p>
+</body>
+</html>
