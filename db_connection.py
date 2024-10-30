@@ -5,9 +5,9 @@ def create_connection():
     try:
         connection = mysql.connector.connect(
             host='localhost',
-            database='plataforma',  # Asegúrate de que el nombre sea correcto
+            database='plataforma',  
             user='root',  
-            password=''  # Dejar vacío si no hay contraseña
+            password=''  
         )
         if connection.is_connected():
             print("Conexión exitosa a la base de datos")
@@ -21,8 +21,12 @@ def close_connection(connection):
         connection.close()
         print("Conexión cerrada")
 
-# Ejemplo de uso
+
 if __name__ == "__main__":
     conn = create_connection()
     if conn:
         close_connection(conn)
+        
+
+
+

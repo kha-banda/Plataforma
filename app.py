@@ -20,6 +20,7 @@ def login():
         # Si las credenciales son correctas, redirigir al panel de control
         if user:
             session["usuario"] = usuario
+            session["usuario_id"] = user[0]  # Almacena el ID del usuario en la sesión
             return redirect(url_for("panel_control"))
         else:
             # Si las credenciales no son válidas, mostrar un mensaje de error
@@ -41,10 +42,36 @@ def panel_control():
 @app.route("/logout")
 def logout():
     session.pop("usuario", None)
+    session.pop("usuario_id", None)  # Limpia el ID del usuario de la sesión
     return redirect(url_for("login"))
+
+# Ruta para mostrar productos
 @app.route('/productos')
 def productos():
     return render_template('productos.html')
+
+# Ruta para enviar reclamos
+@app.route('/enviar_reclamo', methods=['POST'])
+def enviar_reclamo():
+    usuario_id = session.get("usuario_id")
+    if not usuario_id:
+        return redirect(url_for("login"))
+
+    producto_id = request.form["producto_id"]
+    categoria = request.form["categoria"]
+    mensaje = request.form["mensaje"]
+    
+    conn = create_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        INSERT INTO reclamo (usuario_id, producto_id, categoria, mensaje)
+        VALUES (%s, %s, %s, %s)
+    """, (usuario_id, producto_id, categoria, mensaje))
+    conn.commit()
+    close_connection(conn)
+    
+    flash("Tu reclamo fue enviado con éxito.")
+    return redirect(url_for("panel_control"))
 
 @app.route('/quejas')
 def quejas():
@@ -52,18 +79,3 @@ def quejas():
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
-#/PLATAFORMA
-#│
-#├── templates/                # Carpeta que contiene los archivos HTML
-#│   ├── iniciar_sesion.html    # Página de inicio de sesión
-#│   ├── interfazusuario.html   # Página de quejas, opiniones o sugerencias
-#│   ├── productos.html         # Página de productos
-#│   ├── pagina_de_inicio.html  # Página de inicio que acabamos de modificar
-#│   └── ...otros archivos HTML
-#│
-#├── static/                   # Carpeta para recursos estáticos (CSS, imágenes, JS)
-#│
-#├── app.py                    # Archivo principal de Flask
-#├── db_connection.py          # Archivo de conexión con la base de datos
-#└── insert_data.py            # Archivo opcional para insertar datos iniciales
